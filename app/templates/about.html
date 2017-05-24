@@ -1,0 +1,80 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<body>
+<form action="{{ url_for('about') }}" method="post">
+<div class="form-group">
+	<label>Enter sentence</label>
+	<input type=text name=sentence>
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+<h2>{{ sentence }}</h2>
+<hr>
+<table class="table table-bordered">
+<tr>
+<th> Intent </th>
+<th> Tags </th>
+</tr>
+<tr>
+<td> {{ output.intent }} </td>
+<td> {{ output.tags }} </td>
+</tr>
+</table>
+<table class='table table-bordered'>
+<tr>
+{% for k in keys %}
+	{% if k in output.quote_output %}
+	<th> {{ k }} </th>
+	{% endif %}
+{% endfor %}
+</tr>
+{% for k in keys %}
+	{% if k in output.quote_output %}
+	<td> {{ output.quote_output[k] }} </td>
+	{% endif %}
+{% endfor %}
+</tr>
+</table>
+
+{% if 'error' in output.quote_output %}
+	{{ output.quote_output.error }}
+{% endif %}
+{% if 'quotes' in output.quote_output %}
+<table class="table table-bordered">
+	<tr>
+	<th>Type</th>
+	<th>Carrier</th>
+	<th>Source</th>
+	<th>Destination</th>
+	<th>Departure Date</th>
+	<th>Price</th>
+	</tr>
+	{% for q in output.quote_output['quotes'] %}
+	<tr>
+	{% if 'outleg' in q %}
+	<td>Outbound</td>
+	<td>{{ q.outleg.Carriers[0] }} </td>
+	<td>{{ q.outleg.src }} </td>
+	<td>{{ q.outleg.dest }} </td>
+	<td>{{ q.outleg.depdate.replace('T', ' ') }} </td>
+	<td>{{ q.Price }}</td>
+	</tr>
+	{% endif %}
+	{% if 'inleg' in q %}
+	<tr>
+	<td>Inbound</td>
+	<td>{{ q.inleg.Carriers[0] }} </td>
+	<td>{{ q.inleg.src }} </td>
+	<td>{{ q.inleg.dest }} </td>
+	<td>{{ q.inleg.depdate.replace('T', ' ') }} </td>
+	<td>{{ q.Price }}</td>
+	</tr>
+	{% endif %}
+	<tr class='info'>
+	<td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

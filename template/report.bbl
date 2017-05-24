@@ -1,0 +1,137 @@
+\begin{thebibliography}{10}
+
+\bibitem{d1e535}
+Woods WA.
+\newblock {\em Language processing for speech understanding}.
+\newblock NJ, 1983.
+
+\bibitem{dahl}
+Brown M Fisher W Hunicke-Smith K Pallett D Pao C Rudnicky~A Dahl~DA, Bates~M
+  and Shriberg E.
+\newblock Expanding the scope of the atis task: the atis-3 corpus.
+\newblock In {\em Proceedings of the Human Language TechnologyWorkshop.} 1994.
+
+\bibitem{d1e358}
+M~Walker, J~Aberdeen, J~Boland, E~Bratt, J~Garofolo, L~Hirschman, Lee~S Le\_A,
+  S~Narayanan, K~Papineni, Polifroni~J PellomB, A~Potamianos, P~Prabhu,
+  Rudnicky A, and Sanders G.
+\newblock Darpa communicator dialog travelplanning systems: The june 2000 data
+  collection.
+\newblock In {\em Proceedings of the Eurospeech Conference}. 2001.
+
+\bibitem{d1e411}
+Walker MA, A~Rudnicky, R~Prasad, J~Aberdeen, Bratt EO, J~Garofolo, H~Hastie,
+  Pellom~B Le\_A, A~Potamianos, R~Passonneau, S~Roukos, G~S, S~Seneff, and
+  D~Stallard.
+\newblock Darpa communicator: cross-system results for the 2001 evaluation.
+\newblock In {\em Proceedings of the International Conference on Spoken
+  Language Processing,}, pages 269--272. 2002.
+
+\bibitem{d1e5}
+Allen JF, Miller BW, Ringger EK, and T~Sikorski.
+\newblock A robust system for natural spoken dialogue.
+\newblock In {\em Proceedings of the Annual Meeting of the Association for
+  Computational Linguistics,}, pages 62--70. 1996.
+
+\bibitem{d1e333}
+S~Seneff.
+\newblock Tina: A natural language system for spoken language applications.
+\newblock {\em Computational Linguistics}, 1992.
+
+\bibitem{d1e149}
+J~Dowding, Gawron JM, D~Appelt, J~Bear, L~Cherny, R~Moore, and D~Moran.
+\newblock Gemini: A natural languagesystem for spoken-language understanding.
+\newblock In {\em Proceedings of the 31st Annual Meeting of the Association
+  forComputational Linguistics,}, pages 54--61. Columbus, Ohio, 1993.
+
+\bibitem{d1e35}
+H~Alshawi.
+\newblock {\em The Core Language Engine}.
+\newblock MIT Press,, Cambridge, MA, USA, 1992.
+
+\bibitem{d1e509}
+W~Ward.
+\newblock Understanding spontaneous speech: the phoenix system.
+\newblock In {\em Proceedings of the IEEE InternationalConference on Acoustics,
+  Speech, and Signal Processing,}, pages 365--367. Toronto, Canada, 1991.
+
+\bibitem{d1e218}
+S~Miller, R~Bobrow, R~Ingria, and R~Schwartz.
+\newblock Hidden understanding models of natural language.
+\newblock In {\em Proceedingsof the 31st Annual Meeting of the Association for
+  Computational Linguistics,}. New, 1994.
+
+\bibitem{d1e252}
+R~Pieraccini and E~Levin.
+\newblock A learning approach to natural language understanding.
+\newblock In {\em NATO ASI SummerSchool New Advances and Trends in Speech
+  Recognition and Coding}. Springer-Verlag,, Bubion, Spain, 1993.
+
+\bibitem{d1e114}
+Della~S Pietra, M~Epstein, S~Roukos, and T~Ward.
+\newblock Fertility models for statistical natural language.
+\newblock In {\em understandingProceedings of the 35th Annual Meeting of the
+  Association for Computational Linguistics,}, pages 168--173. Madrid,Spain,
+  1997.
+
+\bibitem{d1e473}
+Wang YY and Acero A.
+\newblock Combination of cfg and n-gram modeling in semantic grammar learning.
+\newblock In {\em Proceedings of the Eurospeech Conference,}, pages 2809--2812.
+  2003.
+
+\bibitem{dataset-flickr30k}
+Peter Young, Alice Lai, Micah Hodosh, and Julia Hockenmaier.
+\newblock {From image descriptions to visual denotations: New similarity
+  metrics for semantic inference over event descriptions}.
+\newblock {\em {Transactions of the Association for Computational
+  Linguistics}}, 2:67--78, 2014.
+
+\bibitem{d1e193}
+F~Lef`evre.
+\newblock Dynamic bayesian networks and discriminative classifiers for
+  multi-stage semantic interpretation.
+\newblock In {\em Proceedings of the IEEE International Conference on
+  Acoustics, Speech, and Signal Processing,}, pages 13--16. 2007.
+
+\bibitem{raymond}
+C~Raymond and G~Riccardi.
+\newblock Generative and discriminative algorithms for spoken language
+  understanding.
+\newblock In {\em Proceedings of INTERSPEECH}, page 1605–1608. 2007.
+
+\bibitem{d1e56}
+J~Bilmes and G~Zweig.
+\newblock The graphical models toolkit: An open source software system for
+  speech and timeseriesprocessing.
+\newblock In {\em Proceedings of the IEEE International Conference on
+  Acoustics, Speech, and Signal Processing,pp}, pages 3916--3919. 2002.
+
+\bibitem{d1e301}
+G~Riccardi, R~Pieraccini, and E~Bocchieri.
+\newblock Stochastic automata for language modeling.
+\newblock {\em Computer Speech andLanguage}, pages 265--293, 1996.
+
+\bibitem{wang2006}
+Wang YY and Acero A.
+\newblock Rapid development of spoken language understanding grammars.
+\newblock In {\em Speech Communication}, pages 390--416. 2006.
+
+\bibitem{multijoint}
+Dilek Hakkani-Tür, Gokhan Tur, Asli Celikyilmaz, Yun-Nung~Vivian Chen,
+  Jianfeng Gao, Li~Deng, and Ye-Yi Wang.
+\newblock Multi-domain joint semantic frame parsing using bi-directional
+  rnn-lstm.
+\newblock In {\em INTERSPEECH 2016}. ISCA, 2016.
+
+\bibitem{cnn}
+P.~Xu and R.~Sarikaya.
+\newblock Convolutional neural network based triangular CRF for joint detection and slot filling
+\newblock In {\em ASRU}. 2013.
+
+\bibitem{elman1990finding}
+Jeffrey~L Elman.
+\newblock {Finding structure in time}.
+\newblock {\em Cognitive science}, 14(2):179--211, 1990.
+
+\end{thebibliography}

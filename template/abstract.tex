@@ -1,0 +1,28 @@
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Spoken language understanding (SLU) aims to extract the meaning
+of the speech utterances. While understanding language is still considered
+an unsolved problem, in the last decade, a variety of practical
+goal-oriented conversational understanding systems have been built
+for limited domains. These systems aim to automatically identify the
+intent of the user as expressed in natural language, extract associated
+arguments or slots, and take actions accordingly to satisfy the user’s
+requests. In such systems, the speaker’s utterance is typically recognized
+using an automatic speech recognizer (ASR). Then the intent
+of the speaker is identified from the recognized word sequence using
+an SLU component. Finally, a dialog or task manager (DM) interacts
+with the user (not necessarily in natural language) and helps the
+user achieve the task that the system is designed to support.
+\par
+In this project, we propose an RNN-based online joint SLU model that performs intent detection
+and slot filling as the input word arrives. In addition, we suggest that the generated intent class and slot labels are useful for next word prediction in online automatic speech recognition (ASR). Therefore, we propose to perform intent detection and slot filling jointly in a conditional RNN model. The proposed joint model can be further extended for belief tracking
+in dialogue systems when considering the dialogue history beyond the current utterance. Moreover,
+it can be used as the RNN decoder in an end-to-end trainable sequence-to-sequence speech
+recognition model.
+\par
+Evaluation of online SLU model is made on the ATIS benchmarking data set. On SLU
+tasks, our joint model outperforms the independent task training model 
+on intent detection error rate, with slight degradation on slot filling F1 score. The
+joint model also shows advantageous performance in the realistic ASR settings with
+noisy speech input.

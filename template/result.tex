@@ -1,0 +1,229 @@
+\chapter{Results and Discussion}
+
+\section{Data}
+To compare our work with previously studied methods, we report
+results on the widely used ATIS dataset [24, 25]. This
+dataset is from the air travel domain and consists of audio
+recordings of speakers making travel reservations. All
+the words are labeled with a semantic label in a BIO format
+(B: begin, I: inside, O: outside), e.g. New York contains
+two words New and York and is therefore labeled with
+B-fromloc.city name and I-fromloc.city name
+respectively. Words which do not have semantic labels are
+tagged with O. In total, the number of semantic labels is 127,
+including the label of the class O. The training data consists of
+4,978 sentences and 56,590 words. The test set contains 893
+sentences and 9,198 words. To evaluate our models, we used the
+script provided in the text chunking CoNLL shared task 20001
+in line with other related work.
+
+\section{Evaluation Metrics}
+The most commonly used metrics for Intent Detection(ID) and Slot Filling(SF) are class (or slot)
+error rate (ER) and F-Measure. The simpler metric ER for ID can
+be computed as:
+\begin{equation}
+ER_{ID} = \frac{\text{\# misclassified utterances}}{\text{\# utterances}}
+\end{equation}
+Note that one utterance can have more than one intent. A typical
+example is "Can you tell me my balance? I need to make a transfer."
+In most cases, where the second intent is generic (a greeting, small
+talk with the human agent) or vague, it is ignored. If none of the true
+classes is selected, it is counted as a misclassification.
+\par
+For SF, the error rate can be computed in two ways: The more
+common metric is the F-measure using the slots as units. This metric
+is similar to what is being used for other sequence classification tasks
+in the natural language processing community, such as parsing and
+named entity extraction. In this technique, usually the IOB schema
+is adopted, where each of the words are tagged with their position in
+the slot: beginning (B), in (I) or other (O). Then, recall and precision
+values are computed for each of the slots. A slot is considered to be
+correct if its range and type are correct. The F-Measure is defined as
+the harmonic mean of recall and precision:
+\begin{eqnarray}
+F1-Measure = \frac{2 \times \text{Recall} \times \text{Precision}}{\text{Recall} + \text{Precision}} \\
+Recall = \frac{\text{\# correct slots found}}{\text{\# true slots}} \\
+Precision = \frac{\text{\# correct slots found}}{\text{\# found slots}}
+\end{eqnarray}
+
+\section{Model Training}
+We used LSTM cell as the basic RNN unit, following the LSTM design in (Zaremba et al., 2014).
+The default forget gate bias was set to 1. We used single layer uni-directional LSTM in the proposed
+joint online SLU-LM model. Deeper models by stacking the LSTM layers are to be explored in future work. Word embeddings of size 300 were randomly initialized and fine-tuned during model training. We conducted mini-batch training (with batch size 16) using Adam optimization method following the suggested parameter setup in (Kingma and Ba, 2014). Maximum norm for gradient clipping was set to 5. During model training, we applied dropout (dropout rate 0.5) to the non-recurrent connections (Zaremba et al., 2014) of RNN and the hidden layers of MLPs, and applied L2 regularization ($\gamma = 10^{-4}$) on the parameters of MLPs. 
+\section{Results}
+Table 1 summarises the result our method and its variations on ATIS dataset.
+\begin{table}[h]
+	\centering
+\begin{tabular}{ |l|l|l| }
+		\hline
+		Model & Intent  Error & F1 Score \\ \hline
+		RecNN (Guo et al., 2014) & 4.60 & 93.22 \\ \hline
+		RecNN+Viterbi (Guo et al., 2014) & 4.60 & 93.96 \\ \hline
+		Independent training RNN intent model & 2.13 & - \\ \hline
+		Independent training RNN slot filling model & - & 94.91 \\ \hline
+		Basic joint training model & 2.02 & 94.15 \\ \hline
+		Joint model with recurrent intent context & 1.90 & 94.16 \\ \hline 
+		Joint model with recurrent slot label context & 1.79 & 94.64 \\ \hline
+		Joint model with recurrent intent + slot label context & 1.57 & 94.47 \\ \hline
+		Independent Attention BiRNN & - & 95.4 \\ \hline
+		Joint Attention BiRNN & 1.60 & 95.54 \\ \hline
+		Joint Attention BiRNN (with Ranking Loss) & 1.61 & 95.75 \\ \hline
+	\end{tabular}
+	\caption[ATIS test set Results]{ATIS Test set results on intent detection error, slot filling F1 score, and language modeling perplexity. Related joint models: RecNN: Joint intent detection and slot filling model using recursive	neural network (Guo et al., 2014). RecNN+Viterbi: Joint intent detection and slot filling model using recursive neural network with Viterbi sequence optimization for slot filling (Guo et al., 2014).}
+\end{table}
+The basic joint model uses a shared representation for all the three tasks. It gives slightly
+better performance on intent detection, with some degradation on slot
+filling F1 score. If the RNN output $h_t$ is connected to each task output directly via linear projection without using MLP, performance drops for intent classification and slot filling. Thus, we believe the extra discriminative power introduced by the additional model parameters and non-linearity from MLP is useful for the joint model.
+\par
+As can be seen from the results, the joint model that utilizes two types of recurrent context maintains the benefits of both, namely, the benefit of applying recurrent intent
+context to intent detection, and the benefit of applying recurrent slot label context to slot filling. Another observation is that once recurrent context is applied, the benefit of adding local context for next word prediction is limited. It might hint that the most useful information for the next word prediction can be well captured in the RNN state, and thus adding explicit dependencies on local intent class and slot label is not very helpful.
+\par
+For the attention-based bidirectional RNN architecture, the joint training model achieves 0.23\% absolute gain on slot filling over the independent training models. The attention-based
+RNN model seems to benefit more from the joint training. Results from both of our joint training approaches outperform the best reported joint modeling results. Instead of applying a softmax layer and training the network with the cross entropy loss function, we also used the ranking loss
+function. The hyper-parameters of the ranking loss function are optimized with a 5-fold cross validation. The best parameters are: $\gamma$ = 2, m+ = 3, m- = 0.5. We obtain 0.21\% absolute improvement compared to the cross entropy loss function
+
+\section{Error Analysis}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ |l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l| }
+		\hline
+		Correct-Estimated & a & b & b & d & e & f & g & h & i & j & k & l & m & n & o & p & q \\ \hline
+		a. Abbreviation & 30 &  &  &  &  &  &  &  &  & 2 &  &  &  &  &  &  &  \\ \hline
+		b. Aircraft &  & 6 &  &  &  &  &  &  &  & 3 &  &  &  &  &  &  &  \\ \hline
+		c. Airfare &  &  & 64 &  &  &  &  &  &  & 1 &  &  &  &  &  &  &  \\ \hline
+		d. Airline &  &  &  & 37 &  &  &  &  &  & 2 &  &  &  &  &  &  &  \\ \hline
+		e. Airport &  &  &  &  & 15 &  &  &  &  & 2 &  &  &  &  & 1 &  &  \\ \hline
+		f. Capacity & 1 & 5 &  &  &  & 13 &  &  &  & 2 &  &  &  &  &  &  &  \\ \hline
+		g. City &  &  &  &  &  &  & 3 &  &  & 2 &  &  &  &  &  &  &  \\ \hline
+		h. Day Name &  &  &  &  &  &  &  &  &  & 2 &  &  &  &  &  &  &  \\ \hline
+		i. Distance &  &  &  &  &  &  &  &  & 9 & 1 &  &  &  &  &  &  &  \\ \hline
+		j. Flight &  & 1 & 1 &  &  &  & 1 &  &  & 623 &  &  &  &  &  &  &  \\ \hline
+		k. Flight No &  &  &  &  &  &  &  &  &  & 2 & 6 &  &  &  &  &  &  \\ \hline
+		l. Flight Time &  &  &  &  &  &  &  &  &  & 1 &  &  &  &  &  &  &  \\ \hline
+		m. Ground Fare &  &  & 1 &  &  &  &  &  &  &  &  &  & 3 & 3 &  &  &  \\ \hline
+		n. Ground Service &  &  &  &  &  &  &  &  &  &  &  &  &  & 36 &  &  &  \\ \hline
+		o. Meal &  &  &  &  &  &  &  &  &  & 5 &  &  &  &  &  &  &  \\ \hline
+		p. Quantity &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 8 &  \\ \hline
+		q. Restriction & 1 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+	\end{tabular}
+	\caption{Confusion Matrix for Intent Detection}
+\end{table}
+\subsection{Intent Detection Errors}
+The problem is mostly the non-Flight utterances erroneously classified as Flight. While one cause of these errors is the unbalanced intent distribution, we have manually checked
+each error and clustered them into 6 categories:
+\begin{enumerate}
+\item \textbf{Prepositional phrases embedded in noun phrases:} These errors
+involve phrases such as Capacity of the flight from Boston
+to Orlando, where the prepositional phrase suggests flight information,
+whereas the destination category is mainly determined
+by the head word of the noun phrase (capacity in this
+case). Since classifier has no syntactic features, such sentences
+are usually classified erroneously. Using features from
+a syntactic parser can alleviate this problem.
+\item \textbf{Wrong functional arguments of utterances:} This category is
+similar to the first category but the difference is that, instead
+of a prepositional phrase, the confused phrase is a semantic
+argument of the utterance. Consider the example utterance
+What day of the week does the flight from Boston to Orlando
+fly? These are errors that can be solved by using either a syntactic
+parser that identifies functions of phrases or a semantic
+role labeler.
+\item \textbf{Annotation errors: }These are utterances that were assigned
+the wrong category during manual annotation.
+\item \textbf{Utterances with multiple sentences: }These are utterances with
+more than one sentence. In such cases, the intent is usually in
+the last sentence, whereas the classification output is biased
+by the other sentence.
+\item \textbf{Other:} These include several infrequent error types such as
+ambiguous utterances, ill-formulated queries, and preprocessing/tokenization
+issues:
+\begin{itemize}
+\item Ambiguous utterances: These errors involve utterances
+where the destination category is not clear in the utterance.
+An example from the ATIS test set is list Los
+Angeles. In this utterance, the speaker intent could either
+be to find cities that have flights from Los Angeles
+or flights to Los Angeles.
+\item Ill-formulated queries: These are utterances which include
+a phrase that may mislead the classification or
+understanding. An example from the ATIS test set is:
+What’s the airfare for a taxi to the Denver airport? In
+this case, the word airfare implies a destination category
+of Airfare, whereas what is meant is Ground transportation
+fare. These type of errors are easier for humans
+to handle, but it is not presently clear how they
+can be resolved in automatic processing.
+\item Preprocessing/Tokenization issues: These are errors that
+could be resolved by using a domain ontology or special
+pre-processing or tokenization related to the domain.
+Some domain specific abbreviations and restriction
+codes are examples of this category.
+\end{itemize}
+\item \textbf{Difficult Cases:} These are utterances that include words or
+phrases that were previously unseen in the training data. For
+the example utterance Are snack served on Tower Air?, none
+of the content words and phrases appear with the Meal category
+in the training data.
+
+\end{enumerate}
+
+\subsection{Slot Filling Errors}
+Analyzing the SF decisions, the model found 2,614 of 2,837 slots
+with the correct type and span for the input out of 9,164 words.
+We manually checked each of the 223 erroneous cases and clustered
+them into 8 categories:
+\begin{enumerate}
+\item \textbf{Long distance dependencies:} These are slots where the disambiguating
+tokens are out of the current n-gram context. For
+example, in the utterance Find flights to New York arriving in
+no later than next Saturday, a 6-gram context is required to
+resolve that Saturday is the arrival date. 
+\item \textbf{Partially correct slot value annotations:} These are slots assigned
+a category that is partially correct; either the category
+or the sub-category matches the manual annotation. For example,
+the word tomorrow can either be a Depart Date.Relative
+or Arrive Date.Relative for the utterance flights arriving in
+Boston tomorrow. Note that these can overlap with other error
+types.
+\item \textbf{Previously unseen sequences:} While this category requires
+further analysis, the most common reason is the mismatch
+between the training and test sets. For example, meal related
+slots are missed by the model (8.0\% of all errors) because
+there are no similar cases in the training set. This is also the
+case for the aircraft models (10.0\%), and traveling to states
+instead of cities (3.3\%), etc.
+\item \textbf{Annotation errors:} These are the slots that were assigned the
+wrong category during manual annotation.
+\item \textbf{Other:} These include several infrequent error types such as
+ambiguous utterances, ill-formulated queries, and preprocessing/tokenization
+issues:
+\begin{itemize}
+\item Ill-formulated queries: These errors usually involve an
+ungrammatical phrase that may mislead the interpretation
+of the slot value or there is insufficient context to
+disambiguate the value of the slot. For example, in the
+utterance Find a flight from Memphis to Tacoma dinner,
+it is not clear if the word dinner refers to the description
+of the flight meal.
+\item Ambiguous utterances: These are utterances where the
+slot category is not explicit given the utterance. For
+example, in the utterance I would like to have the airline
+that flies Toronto, Detroit and Orlando, it is not
+clear if the speaker is searching for airlines that have
+flights from Toronto to Detroit and Orlando or from
+some other location to Toronto, Detroit and Orlando.
+\item Preprocessing/Tokenization issues: These are errors that
+could be resolved using a domain ontology or special
+pre-processing or tokenization related to the domain.
+For example, in the utterance What airline is AS, it
+would be helpful to know AS is a domain specific abbreviation.
+\item Ambiguous part-of-speech tag-related errors: These are
+errors that could be resolved if the part-of-speech tags
+were resolved. For example, the word arriving can be a
+verb or an adjective, as in the utterance I want to find the
+earliest arriving flight to Boston. In this case, the slot
+category for the words earliest arriving is Flight-Mod,
+but since the word arriving is very frequently seen as a
+verb in this corpus, it is assigned no slot category.
+\end{itemize}
+\end{enumerate}

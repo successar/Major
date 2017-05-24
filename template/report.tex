@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[pdftex]{graphicx} %for embedding images
+\usepackage{url} %for proper url entries
+\usepackage[margin=1.0in]{geometry}
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={<pdf title here>}, pdfauthor={<author's name here>}, pdfsubject={<subject here>}, pdfkeywords={<keywords here>}]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
+%\usepackage[final]{pdfpages} %for embedding another pdf, remove if not required
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{natbib}
+\titleformat{\chapter}[display]
+{\bfseries\LARGE\filcenter}
+{\filcenter\MakeUppercase{\chaptertitlename} \LARGE\thechapter}
+{1ex}
+{}
+[\vspace{1ex}%
+\titlerule]
+
+
+%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+
+\begin{document}
+\renewcommand{\contentsname}{CONTENTS}
+
+%include other pages
+\input{title} %modify title.tex
+\linespread{1.5}
+\pagenumbering{roman} %numbering before main content starts
+\input{Declaration} %modify Declaration.tex
+\input{certificate} %modify certificate.tex
+\input{acknow} %modify acknow.tex
+\input{abstract} %modift abstract.text
+
+%do not modify these
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+
+%add/change chapters if required
+\input{introduction} %literature survey included in this
+\input{prob-definition} %objective changed to problem definition
+\input{tech}
+\input{work-done}
+\input{result}
+\input{conclusion}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+
+\end{document}

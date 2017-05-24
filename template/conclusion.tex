@@ -1,0 +1,38 @@
+\chapter{Conclusion}
+Leveraging recent improvements in machine learning and spoken
+language processing, the performance of the SLU systems for the
+ATIS domain has improved dramatically. Around 5\% error rate for
+the SLU task implies a solved problem. It is clear, however, that the
+problem of SLU is far from being solved, especially for more realistic,
+naturally-spoken utterances of a variety of speakers from tasks
+more complex than simple flight information requests.
+\par
+In this work, we studied using RNNs for SLU slot filling task, with particular attention on modeling
+output sequence dependencies. Modeling structured output is vital to many sequence learning tasks. We propose a conditional RNN
+model that can be used to jointly perform online spoken language understanding. We show that by continuously modeling
+intent variation and slot label dependencies along with the arrival of new words, the joint training model achieves advantageous performance in
+intent detection and language modeling with slight degradation on slot filling comparing to the independent training models.
+\par
+We explored strategies in utilizing explicit alignment
+information in the attention-based encoder-decoder neural
+network models. We further proposed an attention-based bidirectional
+RNN model for joint intent detection and slot filling.
+Using a joint model for the two SLU tasks simplifies the dialog
+system, as only one model needs to be trained and deployed.
+Our independent training models achieved state-of-the-art performance
+for both intent detection and slot filling on the benchmark
+ATIS task. The proposed joint training models improved
+the intent detection accuracy and slot filling F1 score further
+over the independent training models.
+\par
+Even with such low error rates, the ATIS test set includes many
+example categories and sequences unseen in the training data, and
+the error rates have not converged yet. In that respect, more data
+from just the ATIS domain may be useful for SLU research.
+The error analysis on the ATIS domain shows the primary weaknesses
+of the current modeling approaches: The local
+context overrides the global, the model has no domain knowledge
+to make any inferences, and it tries to fit any utterance into some
+known sample, hence not really robust to any out-of-domain utterances.
+One possible research direction consists of employing longer distance syntactically or semantically
+motivated features, while preserving the robustness of the system to the noise introduced by the speech recognizer and variance due to natural language.

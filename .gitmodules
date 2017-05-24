@@ -1,0 +1,3 @@
+[submodule "rnnsimple"]
+	path = rnnsimple
+	url = https://github.com/successar/SLU

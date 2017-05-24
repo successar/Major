@@ -1,0 +1,22 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces High Level Depiction of Spoken Dialog Systems}}{2}{figure.1.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Frame based SLU in a typical ATIS system}}{7}{figure.2.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Nonlinear functions used in neural nets. }}{20}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Applying dropout to a neural network. }}{21}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A Recurrent Neural Network (RNN). Three time-steps are shown.}}{22}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The inputs and outputs to a neuron of a RNN}}{24}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Gradient explosion clipping visualization}}{27}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces A bi-directional RNN model}}{28}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces A deep bi-directional RNN with three RNN layers.}}{29}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The detailed internals of a GRU}}{31}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The detailed internals of a LSTM}}{32}{figure.3.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ATIS corpus sample with intent and slot annotation}}{35}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces (a) RNN language model. (b) RNN intent detection model. The RNN output at last step is used to predict the intent class. (c) RNN slot filling model.}}{36}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Joint online RNN model for intent detection, slot filling, and next word prediction.}}{38}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Attention Based RNN Model}}{40}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Schedule of increasing intent contribution to the context vector along with the growing input sequence}}{43}{figure.4.5}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

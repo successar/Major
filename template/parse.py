@@ -1,0 +1,18 @@
+D Allen JF, Miller BW, Ringger EK and Sikorski T 1996b A robust system for natural spoken dialogue. Proceedingsof the Annual Meeting of the Association for Computational Linguistics, pp. 62–70.
+D Alshawi H 1992 The Core Language Engine.. MIT Press, Cambridge, MA., USA.
+D Bilmes J and Zweig G 2002 The graphical models toolkit: An open source software system for speech and timeseriesprocessing. Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing,pp. 3916–3919.
+Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E 1994Expanding the scope of the ATIS task: the ATIS-3 corpus. Proceedings of the Human Language TechnologyWorkshop. Morgan Kaufmann.
+D Della Pietra S, Epstein M, Roukos S and Ward T 1997 Fertility models for statistical natural language understanding.Proceedings of the 35th Annual Meeting of the Association for Computational Linguistics, pp. 168–173, Madrid,Spain.
+D Dowding J, Gawron JM, Appelt D, Bear J, Cherny L, Moore R and Moran D 1993 Gemini: A natural languagesystem for spoken-language understanding. Proceedings of the 31st Annual Meeting of the Association forComputational Linguistics, pp. 54–61, Columbus, Ohio.
+D Lef`evre F 2007 Dynamic Bayesian networks and discriminative classifiers for multi-stage semantic interpretation.Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing, vol. 4, pp. 13–16.IEEE.
+D Miller S, Bobrow R, Ingria R and Schwartz R 1994 Hidden understanding models of natural language. Proceedingsof the 31st Annual Meeting of the Association for Computational Linguistics, New Mexico State University.
+D Pieraccini R and Levin E 1993 A learning approach to natural language understanding. 1993 NATO ASI SummerSchool New Advances and Trends in Speech Recognition and Coding. Springer-Verlag, Bubion, Spain.
+Raymond C and Riccardi G 2007 Generative and discriminative algorithms for spoken language understanding.Proceedings of INTERSPEECH, pp. 1605–1608.
+D Riccardi G, Pieraccini R and Bocchieri E 1996 Stochastic automata for language modeling.. Computer Speech andLanguage 10, 265–293.
+D Seneff S 1992 Tina: A natural language system for spoken language applications.. Computational Linguistics 18(1),61–86.
+D Walker M, Aberdeen J, Boland J, Bratt E, Garofolo J, Hirschman L, Le A, Lee S, Narayanan S, Papineni K, PellomB, Polifroni J, Potamianos A, Prabhu P, Rudnicky A and Sanders G 2001 DARPA Communicator dialog travelplanning systems: The June 2000 data collection. Proceedings of the Eurospeech Conference.
+D Walker MA, Rudnicky A, Prasad R, Aberdeen J, Bratt EO, Garofolo J, Hastie H, Le A, Pellom B, Potamianos A,Passonneau R, Roukos S, S G, Seneff S and Stallard D 2002 DARPA Communicator: cross-system results for the2001 evaluation. Proceedings of the International Conference on Spoken Language Processing, pp. 269–272.
+D Wang YY and Acero A 2003a Combination of CFG and n-gram modeling in semantic grammar learning.Proceedings of the Eurospeech Conference, pp. 2809–2812. ISCA.
+Wang YY and Acero A 2006 Rapid development of spoken language understanding grammars. SpeechCommunication 48(3-4), 390–416.
+D Ward W 1991 Understanding spontaneous speech: the Phoenix system. Proceedings of the IEEE InternationalConference on Acoustics, Speech, and Signal Processing, pp. 365–367, Toronto, Canada.
+D Woods WA 1983 Language processing for speech understanding. Computer Speech Processing Prentice-HallInternational Englewood Cliffs, NJ.

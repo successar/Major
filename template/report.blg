@@ -1,0 +1,35 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
+The style file: unsrt.bst
+Database file #1: biblio.bib
+You're missing a field part---line 1038 of file biblio.bib
+ : title=
+ :       “Convolutional neural network based triangular CRF for joint detection and slot filling” ,
+I'm skipping whatever remains of this entry
+Warning--empty publisher in d1e535
+Too many commas in name 1 of "Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E" for entry dahl
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E" for entry dahl
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E" for entry dahl
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E" for entry dahl
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Dahl DA, Bates M, Brown M, Fisher W, Hunicke-Smith K, Pallett D, Pao C, Rudnicky A and Shriberg E" for entry dahl
+while executing---line 944 of file unsrt.bst
+Warning--empty publisher in dahl
+Warning--empty publisher in d1e358
+Warning--empty publisher in d1e411
+Warning--empty publisher in d1e5
+Warning--empty publisher in d1e149
+Warning--empty publisher in d1e509
+Warning--empty publisher in d1e218
+Warning--empty publisher in d1e114
+Warning--empty publisher in d1e473
+Warning--empty publisher in d1e193
+Warning--empty publisher in raymond
+Warning--empty publisher in d1e56
+Warning--empty publisher in wang2006
+Warning--empty title in cnn
+Warning--empty booktitle in cnn
+Warning--empty year in cnn
+(There were 6 error messages)

@@ -1,0 +1,48 @@
+\BOOKMARK [0][-]{chapter*.1}{Certificate}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Certificate}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{Acknowledgements}{}% 3
+\BOOKMARK [0][-]{chapter*.4}{Abstract}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Overview}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Objectives of this work}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Technical Challenges}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Knowledge Based Solutions}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{Semantically Enhanced Syntactic Grammar}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.2}{Semantic Grammars}{section.2.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Data Driven Approaches}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.3.1}{Generative Models}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.2}{Integrated Models}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.3}{Conditional Models}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.4}{Neural Models}{section.2.3}% 17
+\BOOKMARK [0][-]{chapter.3}{Techniques used}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Neural Networks}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{Feed-forward neural nets}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Recurrent Neural Nets}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Recurrent architectures}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Vanishing Gradient \046 Gradient Explosion Problems}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{Solution to the Exploding \046 Vanishing Gradients}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.4}{Deep Bidirectional RNNs}{section.3.2}% 25
+\BOOKMARK [1][-]{section.3.3}{Gated Recurrent Units}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{Long-Short-Term-Memories}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Proposed Work}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Background}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.1.1}{RNN for Intent Detection and Slot Filling}{section.4.1}% 30
+\BOOKMARK [1][-]{section.4.2}{Method 1}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{Model}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{Next Step Prediction}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{Method 2}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{Model}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.2}{Objective Functions}{section.4.3}% 36
+\BOOKMARK [2][-]{subsection.4.3.3}{Training}{section.4.3}% 37
+\BOOKMARK [2][-]{subsection.4.3.4}{Inference}{section.4.3}% 38
+\BOOKMARK [0][-]{chapter.5}{Results and Discussion}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Data}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.2}{Evaluation Metrics}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{Model Training}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.4}{Results}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.5}{Error Analysis}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.5.1}{Intent Detection Errors}{section.5.5}% 45
+\BOOKMARK [2][-]{subsection.5.5.2}{Slot Filling Errors}{section.5.5}% 46
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 47
+\BOOKMARK [0][-]{chapter.6}{Bibliography}{}% 48
